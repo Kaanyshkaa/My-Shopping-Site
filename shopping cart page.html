@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shopping Cart</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0fbd83",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                        "text-light": "#111816",
+                        "text-dark": "#ffffff",
+                        "subtle-light": "#61897c",
+                        "subtle-dark": "#a0b8b1",
+                        "border-light": "#dbe6e2",
+                        "border-dark": "#2a3f39",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="flex flex-col min-h-screen justify-between">
+<div class="flex-grow">
+<header class="bg-background-light dark:bg-background-dark sticky top-0 z-10 px-4 py-3 border-b border-border-light dark:border-border-dark">
+<div class="flex items-center">
+<button class="p-2 -ml-2">
+<svg class="text-text-light dark:text-text-dark" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 18l-6-6 6-6"></path>
+</svg>
+</button>
+<h1 class="text-lg font-bold text-center flex-1 pr-8">Shopping Cart</h1>
+</div>
+</header>
+<main class="p-4 space-y-4">
+<div class="bg-white dark:bg-background-dark/50 rounded-lg p-4 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<img alt="Cotton T-shirt" class="w-16 h-16 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0ZTp4Qh41godXVEoAQ0RLlAXwk0LPXEPAp1U0S_2HGX0EMHUQcfwVZiJGpaapSMK5xBsgOX5bOzi6FiUT5VNj8AvWFkRBygn_1T6MM049Q9pOOrxCehjhqERnXHuKc9p6LP8mJCP-NGjmyaYQcyq6s_2qEeGYC-FmzFZo5jTou1JXme2TIW0qOiYUy_fUA-sKm1bqTvlv2y9rqYqE_QoxlRhpJvzNfTEOo85_xTAyMtncl9J966kCcZLXjHbMrzFHx48deCIBCw"/>
+<div>
+<h2 class="font-bold text-base">Cotton T-shirt</h2>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Size M</p>
+<p class="font-bold text-base mt-1">$25.00</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-full bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center font-bold text-lg">-</button>
+<span class="font-bold w-4 text-center">1</span>
+<button class="w-8 h-8 rounded-full bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center font-bold text-lg">+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark/50 rounded-lg p-4 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<img alt="Denim Jeans" class="w-16 h-16 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9YpDd1P84eajbvVRg2o0KI2kMu4QsSIF_XVTSMziqyfyQpzggGSjmQYf01ml843lfDY3zoVLUwoT29elCxz94Qx4A2EUCAY2l1ePjh9fyA2nzY7sfWNrgWpDbJdKC9X6-X59Wv1mJ1o8U5G_npi7zAmtKU9sdJE-unnQvUOFGVZELvPKqckkCrKmluRL_G1FwZ_yHf89HUeievC32BiDHrFc70UmsoMfqXVxiXXgZT2EKldRoA-t5si1bE5fpnBOlAe_2GrX53A"/>
+<div>
+<h2 class="font-bold text-base">Denim Jeans</h2>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Size S</p>
+<p class="font-bold text-base mt-1">$25.00</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-full bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center font-bold text-lg">-</button>
+<span class="font-bold w-4 text-center">1</span>
+<button class="w-8 h-8 rounded-full bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center font-bold text-lg">+</button>
+</div>
+</div>
+<div class="flex gap-2">
+<input class="flex-1 bg-white dark:bg-background-dark/50 border border-border-light dark:border-border-dark rounded-lg px-4 py-3 placeholder:text-subtle-light dark:placeholder:text-subtle-dark focus:ring-primary focus:border-primary" placeholder="Discount code" type="text"/>
+<button class="bg-primary/20 dark:bg-primary/30 text-primary font-bold px-6 py-3 rounded-lg">Apply</button>
+</div>
+<div class="bg-white dark:bg-background-dark/50 rounded-lg p-4 space-y-3">
+<h3 class="text-lg font-bold">Order Summary</h3>
+<div class="flex justify-between text-base">
+<p class="text-subtle-light dark:text-subtle-dark">Subtotal</p>
+<p class="font-medium">$50.00</p>
+</div>
+<div class="flex justify-between text-base">
+<p class="text-subtle-light dark:text-subtle-dark">Shipping</p>
+<p class="font-medium">$5.00</p>
+</div>
+<div class="border-t border-border-light dark:border-border-dark my-2"></div>
+<div class="flex justify-between text-base font-bold">
+<p>Total</p>
+<p>$55.00</p>
+</div>
+</div>
+</main>
+</div>
+<footer class="sticky bottom-0 bg-background-light dark:bg-background-dark p-4 border-t border-border-light dark:border-border-dark">
+<button class="w-full bg-primary text-white font-bold py-4 rounded-lg text-base">
+                Proceed to Checkout
+            </button>
+</footer>
+</div>
+
+
+</body></html>

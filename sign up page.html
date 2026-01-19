@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign Up</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0fbd83",
+              "background-light": "#f6f8f7",
+              "background-dark": "#10221c",
+            },
+            fontFamily: {
+              display: ["Manrope"],
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+<style>
+      body {
+        font-family: "Manrope", sans-serif;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark">
+<div class="flex flex-col h-screen">
+<header class="flex items-center p-4">
+<button class="text-black dark:text-white">
+<svg class="h-6 w-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 18l-6-6 6-6"></path>
+</svg>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold text-black dark:text-white pr-6">Sign Up</h1>
+</header>
+<main class="flex-grow flex flex-col justify-center px-4 space-y-6">
+<div class="space-y-4">
+<div>
+<label class="sr-only" for="name">Full Name</label>
+<input class="w-full h-14 bg-background-light dark:bg-primary/20 border-0 rounded-lg p-4 text-black dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 focus:ring-2 focus:ring-primary/50" id="name" placeholder="Full Name" type="text"/>
+</div>
+<div>
+<label class="sr-only" for="email">Email</label>
+<input class="w-full h-14 bg-background-light dark:bg-primary/20 border-0 rounded-lg p-4 text-black dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 focus:ring-2 focus:ring-primary/50" id="email" placeholder="Email" type="email"/>
+</div>
+<div>
+<label class="sr-only" for="password">Password</label>
+<input class="w-full h-14 bg-background-light dark:bg-primary/20 border-0 rounded-lg p-4 text-black dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 focus:ring-2 focus:ring-primary/50" id="password" placeholder="Password" type="password"/>
+</div>
+<div>
+<label class="sr-only" for="confirm-password">Confirm Password</label>
+<input class="w-full h-14 bg-background-light dark:bg-primary/20 border-0 rounded-lg p-4 text-black dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 focus:ring-2 focus:ring-primary/50" id="confirm-password" placeholder="Confirm Password" type="password"/>
+</div>
+</div>
+<div class="pt-2">
+<button onclick="registerUser()" class="w-full h-14 bg-primary text-white font-bold rounded-lg text-base">Sign Up</button>
+</div>
+</main>
+<footer class="p-4 text-center">
+<a class="text-sm text-black dark:text-white underline" href="login page.html">Already have an account? Log In</a>
+</footer>
+</div>
+
+<script>
+    function registerUser() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirm = document.getElementById('confirm-password').value;
+
+        if(!name || !email || !password) {
+            alert("Please fill in all fields");
+            return;
+        }
+
+        if(password !== confirm) {
+            alert("Passwords do not match");
+            return;
+        }
+        // --- NEW LOGIC START ---
+        // 1. Get the email currently saved in memory
+        const storedEmail = localStorage.getItem('userEmail');
+
+        // 2. Check if the email the user typed matches the saved email
+        if(storedEmail && email === storedEmail) {
+            alert("You already have an account! Please Log In.");
+            window.location.href = "login page.html"; // Redirect to Login
+            return; // Stop here
+        }
+        // --- NEW LOGIC END ---
+
+        // Save data to browser memory
+        localStorage.setItem('userName', name);// SAVE NAME, EMAIL, AND PASSWORD
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('userPassword', password);
+
+        //alert("Account Created! Redirecting to Login...");
+        //window.location.href = "login page.html";
+        alert("Saved: " + name + "\nRedirecting to Login...");
+        window.location.href = "login.html";
+    }
+</script>
+
+</body></html>

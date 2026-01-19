@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KK</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0fbd83",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                        "text-light": "#0f172a",
+                        "text-dark": "#e2e8f0"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="flex flex-col min-h-screen">
+<header class="flex items-center justify-center py-6">
+<h1 class="text-4xl font-bold tracking-tighter">KK</h1>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-4 text-center">
+<div class="w-40 h-40 flex items-center justify-center bg-primary/10 dark:bg-primary/20 rounded-full mb-8">
+<span class="text-6xl font-bold text-primary">KK</span>
+</div>
+<h2 class="text-3xl font-bold tracking-tight mb-4">Welcome to KK</h2>
+<p class="max-w-md text-lg text-text-light/80 dark:text-text-dark/80 mb-8">
+                Discover a curated selection of high-quality products. From fashion to home goods, find everything you need in one place.
+            </p>
+<button class="inline-block bg-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-primary/90 transition-colors" onclick="checkAuth()">
+                Explore Now
+            </button>
+</main>
+<footer class="py-6 text-center text-sm text-text-light/60 dark:text-text-dark/60">
+<p>© 2025 KK. All rights reserved.</p>
+</footer>
+</div>
+
+<script>
+    function checkAuth() {
+        const loggedIn = localStorage.getItem('isLoggedIn');
+        if (loggedIn === 'true') {
+            window.location.href = "home page.html";
+        } else {
+            window.location.href = "login page.html";
+        }
+    }
+</script>
+
+</body></html>

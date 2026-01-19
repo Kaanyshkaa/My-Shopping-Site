@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Method</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0fbd83",
+            "background-light": "#f6f8f7",
+            "background-dark": "#10221c",
+            "foreground-light": "#111816",
+            "foreground-dark": "#f6f8f7",
+            "subtle-light": "#61897c",
+            "subtle-dark": "#a0b8b1",
+            "border-light": "#dbe6e2",
+            "border-dark": "#345d4e"
+          },
+          fontFamily: {
+            "display": ["Manrope"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .checkbox-custom {
+      --tw-bg-opacity: 1;
+      background-color: transparent;
+      background-image: var(--checkbox-tick-svg);
+      background-size: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-size 0.2s ease-in-out;
+    }
+    .checkbox-custom:checked {
+      background-size: 60%;
+      background-color: theme('colors.primary');
+      border-color: theme('colors.primary');
+    }
+    .dark .checkbox-custom:checked {
+        background-color: theme('colors.primary');
+        border-color: theme('colors.primary');
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden" style="--checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill='%23ffffff' xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');">
+<div class="flex flex-col">
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
+<button class="text-foreground-light dark:text-foreground-dark">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+</svg>
+</button>
+<h1 class="text-foreground-light dark:text-foreground-dark text-lg font-bold flex-1 text-center pr-6">Payment Method</h1>
+</header>
+<main class="p-4 space-y-4">
+<h2 class="text-foreground-light dark:text-foreground-dark text-lg font-bold">Choose a payment method</h2>
+<div class="space-y-2">
+<label class="flex items-center gap-4 bg-background-light dark:bg-background-dark p-4 rounded-lg border border-border-light dark:border-border-dark cursor-pointer has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary/50">
+<div class="flex items-center gap-4 flex-grow">
+<div class="bg-center bg-no-repeat aspect-square bg-contain h-8 w-12 shrink-0 rounded-DEFAULT bg-white flex items-center justify-center">
+<img alt="Visa" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT6afLQXw3ZZOE9YeL0HkghKdcQUdLaHgYLbe0-oRlYTXClQwVwwzIG2rE0EejBewktQeFjrUPQH0xVNKSeWxd68KH3HtIelWHE5r4SgKnwVynkWT51Oe35p7HFM8MUXtIsvLvtMSA_kZDuB1Vfv88vPjC2fSE8H5RpSJe7OEgCqk6CT1u7TERsTJaPjLTF7hb-WADCPswMH9ddI9Q0HAokSXziZQFQsUTPTrMvlu2n11Sc8-TV3gIZX11GgSN8K-nNEEksqF_NQ"/>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-foreground-light dark:text-foreground-dark text-base font-medium">Credit Card</p>
+<p class="text-subtle-light dark:text-subtle-dark text-sm font-normal">Visa ... 4567</p>
+</div>
+</div>
+<input class="h-5 w-5 rounded-full border-2 border-border-light dark:border-border-dark focus:ring-0 focus:ring-offset-0 checkbox-custom appearance-none" name="payment-method" type="radio"/>
+</label>
+<label class="flex items-center gap-4 bg-background-light dark:bg-background-dark p-4 rounded-lg border border-border-light dark:border-border-dark cursor-pointer has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary/50">
+<div class="flex items-center gap-4 flex-grow">
+<div class="bg-center bg-no-repeat aspect-square bg-contain h-8 w-12 shrink-0 rounded-DEFAULT bg-white flex items-center justify-center">
+<img alt="PayPal" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9ppCrxf_400Eq8eaRCNDsEyzKoBI9LC2mBJC6KRVJ6t27xuihMy6EAgoClLl09iZzlK0x0CRgkjyVZKnDKqlNjKBhZ-D3XhC2pmlM6A7NwTyGjFBDheCPnmxj9sAY8vvaKtS6DM08mMDLCQamN10GozuXhN4RUrsA2SXrTkJn-szhenEsBXeXKKYxYFY0XjE2XylXEMTFuhUKiUJhirMyWRRnraMajKmZLraPa071m1YLCdlPiBfoomzcWq3nB7BSIzqsf5aijg"/>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-foreground-light dark:text-foreground-dark text-base font-medium">PayPal</p>
+<p class="text-subtle-light dark:text-subtle-dark text-sm font-normal">PayPal account</p>
+</div>
+</div>
+<input checked="" class="h-5 w-5 rounded-full border-2 border-border-light dark:border-border-dark focus:ring-0 focus:ring-offset-0 checkbox-custom appearance-none" name="payment-method" type="radio"/>
+</label>
+<label class="flex items-center gap-4 bg-background-light dark:bg-background-dark p-4 rounded-lg border border-border-light dark:border-border-dark cursor-pointer has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary/50">
+<div class="flex items-center gap-4 flex-grow">
+<div class="bg-center bg-no-repeat aspect-square bg-contain h-8 w-12 shrink-0 rounded-DEFAULT bg-white flex items-center justify-center">
+<img alt="Apple Pay" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_jbeFnxJJFB1F-TUVm27kGYG6J5JE6h0CbDVFBiQ0kKMCxhUNfKEcTdejc3Ic09YLaLGC1fRMiKPITzl04SjYNycNwt4bsaIQR-SSgX4cTpUibZNcMZ1CwXFXRjoOBXbp-AExA4l9hzV2jlZf_yQUCSvUyR_wG70yh0NBs2HpX35P1H_G6aj0qAPskhJBU1otkbpzzUs5KGzluJjgz3JjTN5IleVdzVRrkHxot9JA31ni5ouvMXsVAN12gAwjatTYAqHzu-tPtA"/>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-foreground-light dark:text-foreground-dark text-base font-medium">Apple Pay</p>
+<p class="text-subtle-light dark:text-subtle-dark text-sm font-normal">Apple Pay</p>
+</div>
+</div>
+<input class="h-5 w-5 rounded-full border-2 border-border-light dark:border-border-dark focus:ring-0 focus:ring-offset-0 checkbox-custom appearance-none" name="payment-method" type="radio"/>
+</label>
+</div>
+</main>
+</div>
+<footer class="p-4 bg-background-light dark:bg-background-dark">
+<button class="w-full h-12 px-5 rounded-lg bg-primary text-white text-base font-bold">
+        Continue
+      </button>
+</footer>
+</div>
+
+</body></html>

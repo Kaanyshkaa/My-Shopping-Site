@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0fbd83",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                        "text-light": "#111816",
+                        "text-dark": "#f6f8f7",
+                        "subtext-light": "#61897c",
+                        "subtext-dark": "#a0b8b2",
+                        "border-light": "#e3e8e7",
+                        "border-dark": "#2a3c36",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    /* Added filled class for active state */
+    .material-symbols-outlined.filled {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24
+    }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 bg-background-light dark:bg-background-dark z-10">
+<div class="flex items-center justify-between p-4">
+<button class="p-2" onclick="window.history.back()">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold text-text-light dark:text-text-dark">Profile</h1>
+<div class="w-10"></div>
+</div>
+</header>
+<main class="flex-grow px-4 pb-24">
+<div class="flex flex-col items-center pt-6 pb-8 space-y-4">
+<div class="relative">
+<div class="w-32 h-32 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCz4ykEsmZrD_TJkdJyDBwVxLNo6UABHRa8zMaPRQA-93BLydewiCH10t57f6DUOQjlGO-wROU3G59srlF2qMpCWUeKdfCro6PLjPZVDZR4FWehTazEnm9iccc0Jk2YBy2hFqrIvM9fKbhzCWSUYEpXGpHDRMpIb6JbCrlg_a_XwovWMqq7g0qqnLv6EkxPyrfsDx5U82_z2VinfEln5Gni6L5p38lqP-TjFbWkGWIlVsPwDyWQ1Nl2LgcawKB3DTOfd4bdy7uyPQ");'></div>
+<button class="absolute bottom-0 right-0 bg-primary text-white rounded-full p-2 shadow-md">
+<span class="material-symbols-outlined !text-base">photo_camera</span>
+</button>
+</div>
+<div class="text-center">
+<p id="profile-name" class="text-2xl font-bold text-text-light dark:text-text-dark">Sophia Bennett</p>
+<p class="text-base text-primary font-medium">Premium Member</p>
+<p class="text-sm text-subtext-light dark:text-subtext-dark">Joined in 2021</p>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<h2 class="text-lg font-bold text-text-light dark:text-text-dark mb-2">Account Details</h2>
+<div class="bg-white dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg">
+<div class="flex items-center justify-between p-4 border-b border-border-light dark:border-border-dark">
+<div>
+<p class="text-base font-medium text-text-light dark:text-text-dark">Email</p>
+<p id="profile-email" class="text-sm text-subtext-light dark:text-subtext-dark">sophia.bennett@email.com</p>
+</div>
+<button class="p-2 text-subtext-light dark:text-subtext-dark">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-4 border-b border-border-light dark:border-border-dark">
+<div>
+<p class="text-base font-medium text-text-light dark:text-text-dark">Phone Number</p>
+<p class="text-sm text-subtext-light dark:text-subtext-dark">+1 (555) 123-4567</p>
+</div>
+<button class="p-2 text-subtext-light dark:text-subtext-dark">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-4">
+<div>
+<p class="text-base font-medium text-text-light dark:text-text-dark">Password</p>
+<p class="text-sm text-subtext-light dark:text-subtext-dark">********</p>
+</div>
+<button class="p-2 text-subtext-light dark:text-subtext-dark">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-lg font-bold text-text-light dark:text-text-dark mb-2">Shipping Addresses</h2>
+<div class="bg-white dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg">
+<div class="flex items-center justify-between p-4 border-b border-border-light dark:border-border-dark">
+<div>
+<p class="text-base font-medium text-text-light dark:text-text-dark">Home Address</p>
+<p class="text-sm text-subtext-light dark:text-subtext-dark">123 Elm Street, Anytown, CA 91234</p>
+</div>
+<button class="p-2 text-subtext-light dark:text-subtext-dark">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-4">
+<div>
+<p class="text-base font-medium text-text-light dark:text-text-dark">Work Address</p>
+<p class="text-sm text-subtext-light dark:text-subtext-dark">456 Oak Avenue, Anytown, CA 91234</p>
+</div>
+<button class="p-2 text-subtext-light dark:text-subtext-dark">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-lg font-bold text-text-light dark:text-text-dark mb-2">Preferences</h2>
+<div class="bg-white dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg">
+<div class="flex items-center justify-between p-4 border-b border-border-light dark:border-border-dark">
+<p class="text-base font-medium text-text-light dark:text-text-dark">Notifications</p>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 border-b border-border-light dark:border-border-dark">
+<p class="text-base font-medium text-text-light dark:text-text-dark">Language</p>
+<button class="flex items-center space-x-1 text-subtext-light dark:text-subtext-dark">
+<span class="text-sm">English</span>
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-4">
+<p class="text-base font-medium text-text-light dark:text-text-dark">Currency</p>
+<button class="flex items-center space-x-1 text-subtext-light dark:text-subtext-dark">
+<span class="text-sm">USD</span>
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark border-t border-border-light dark:border-border-dark pb-safe">
+<div class="flex justify-around items-center h-16">
+<a class="flex flex-col items-center space-y-1 text-subtext-light dark:text-subtext-dark" href="home page.html">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs">Home</span>
+</a>
+<a class="flex flex-col items-center space-y-1 text-subtext-light dark:text-subtext-dark" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="text-xs">Categories</span>
+</a>
+<a class="flex flex-col items-center space-y-1 text-subtext-light dark:text-subtext-dark" href="#">
+<span class="material-symbols-outlined">favorite_border</span>
+<span class="text-xs">Wishlist</span>
+</a>
+<a class="flex flex-col items-center space-y-1 text-subtext-light dark:text-subtext-dark" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-xs">Cart</span>
+</a>
+<a class="flex flex-col items-center space-y-1 text-primary" href="user profile page.html">
+<span class="material-symbols-outlined filled">person</span>
+<span class="text-xs font-bold">Profile</span>
+</a>
+</div>
+</footer>
+</div>
+<script>
+    // 1. Check if user is logged in
+    if(localStorage.getItem('isLoggedIn') !== 'true') {
+        window.location.href = "login page.html";
+    }
+
+    // 2. Get User Data from Memory
+    const userName = localStorage.getItem('userName');
+    const userEmail = localStorage.getItem('userEmail');
+
+    // 3. Display Data on the Page
+    if(userName) {
+        document.getElementById('profile-name').innerText = userName;
+    } else {
+        // Optional: Alert removed for cleaner look, you can add it back if needed
+    }
+    if(userEmail) {
+        document.getElementById('profile-email').innerText = userEmail;
+    }
+
+    // 4. Logout Function
+    function logout() {
+        localStorage.removeItem('isLoggedIn');
+        window.location.href = "login page.html";
+    }
+</script>
+</body></html>

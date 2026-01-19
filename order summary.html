@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Summary</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0fbd83",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#10221c",
+                        "text-light": "#111816",
+                        "text-dark": "#ffffff",
+                        "text-subtle-light": "#61897c",
+                        "text-subtle-dark": "#a3b3ad",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .icon {
+            width: 24px;
+            height: 24px;
+            color: #111816;
+        }
+        .dark .icon {
+            color: #ffffff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden">
+<div class="flex-grow">
+<header class="flex items-center p-4 pb-2">
+<button class="flex size-10 shrink-0 items-center justify-center">
+<svg class="icon" fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+</svg>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold tracking-tight pr-10">Order Summary</h1>
+</header>
+<main class="px-4 space-y-6 pt-4">
+<section>
+<h2 class="text-lg font-bold leading-tight tracking-tight mb-3">Items</h2>
+<div class="space-y-3">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVao7QNUGN02ubCarAl5LcY3ra0G40KSJUL-VIb86R3iHMtolIPqLuJnh1DMvFHgSKZXJzePOJ26cpz3uH_RnBYAuf8dc_MzwlbaHPkoKHXj4m4WSSW_i1Rp37Zi8rVlqFtRmz3Oj_6JGYBS1NM8nQrQ7Vnc5PxKqvWkoMUw4KcIpOZmEmTEF6Hxjpi49dBIFUioRnv-Tb993E_n_jjr1Bp30i1svdUP-cTpAh39COKZrt1oijHNH9Hu7pjrUVm2K3WwmAUowjBg");'></div>
+<div class="flex-grow">
+<p class="font-medium">Cotton T-Shirt</p>
+<p class="text-sm text-text-subtle-light dark:text-text-subtle-dark">Size M</p>
+</div>
+<p class="font-medium">$25</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA9FHtJLuUO4jIiEeKqm2L5SnQ-TVxDihRWtGbBHnPG6JZRUPbcbKeZe2LNZLEYS2An8nRgNCbd9qiX9FMq2AU5_bMWzhkdW38L0eWFVaNe80QpLLkR09obcdekZsahldW2oamz7jB-_Slg_t1x713_acS3pNWYJOV69rTXX12hYY2BjqruSgyvJs2KiritP3iHcBcM8kA-nBQvsmY25lP8ahAsvUFBKm2gIXLm5iq4OoApN0OPpNvnRNCgxRxHbS0zEzZmGUmroQ");'></div>
+<div class="flex-grow">
+<p class="font-medium">Running Shoes</p>
+<p class="text-sm text-text-subtle-light dark:text-text-subtle-dark">Size 8</p>
+</div>
+<p class="font-medium">$80</p>
+</div>
+</div>
+</section>
+<section>
+<div class="flex justify-between items-center mb-3">
+<h2 class="text-lg font-bold leading-tight tracking-tight">Shipping Address</h2>
+<button>
+<svg class="icon" fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"></path>
+</svg>
+</button>
+</div>
+<div>
+<p class="font-medium">Ethan Harper</p>
+<p class="text-sm text-text-subtle-light dark:text-text-subtle-dark">123 Elm Street, Apt 4B, Springfield, IL 62704</p>
+</div>
+</section>
+<section>
+<div class="flex justify-between items-center mb-3">
+<h2 class="text-lg font-bold leading-tight tracking-tight">Payment Method</h2>
+<button>
+<svg class="icon" fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"></path>
+</svg>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat bg-contain w-10 h-6 shrink-0 rounded" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHDFRyYwMhjfmxlwl8PSSUOPKmUQTtikqIx6eVZAhwUlfP6hkr9vX9WK5mANKbjiiXeoYLVPIMD5ItoAYHp3fIyjAvo2vCpMpmIZs35tI7wFM0JT6_Tt2UE78wkWmxmNQrh2avWo9fCGQnFvkLuWl6kZZBglEh4UQ_jQ4rVKK69969MReKPOozd9nraeWitgUCno221pGKVPboKvErl_dVHQMzOnE72YiZ7QbukOo0j3KxaBgdK_C33rjZ595Wk0vVSUFtgaMnWA");'></div>
+<p class="flex-grow font-medium">Credit Card</p>
+</div>
+</section>
+<section>
+<h2 class="text-lg font-bold leading-tight tracking-tight mb-3">Order Summary</h2>
+<div class="space-y-2 text-text-subtle-light dark:text-text-subtle-dark">
+<div class="flex justify-between">
+<p>Subtotal</p>
+<p class="text-text-light dark:text-text-dark">$105.00</p>
+</div>
+<div class="flex justify-between">
+<p>Shipping</p>
+<p class="text-text-light dark:text-text-dark">$5.00</p>
+</div>
+<div class="flex justify-between">
+<p>Tax</p>
+<p class="text-text-light dark:text-text-dark">$10.00</p>
+</div>
+<hr class="border-text-subtle-light/20 dark:border-text-subtle-dark/20 my-3"/>
+<div class="flex justify-between font-bold text-text-light dark:text-text-dark text-base">
+<p>Total</p>
+<p>$120.00</p>
+</div>
+</div>
+</section>
+</main>
+</div>
+<div class="p-4 bg-background-light dark:bg-background-dark sticky bottom-0">
+<button class="w-full flex items-center justify-center rounded-lg h-12 px-5 bg-primary text-black text-base font-bold leading-normal tracking-wide">
+                Place Order
+            </button>
+</div>
+</div>
+
+</body></html>
